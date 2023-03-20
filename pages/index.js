@@ -1,5 +1,9 @@
+import Avatar from "@/components/Avatar";
 import Head from "next/head";
-// import Image from "next/image";
+import Link from "next/link";
+import Image from "next/image";
+import SearchTab from "@/components/SearchTab";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -10,35 +14,54 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* Header */}
-      <header>
-        {/* Left */}
-        <div className="flex space-x-4 items-center">
-          <a href="https://github.com/joshuaedo/google#readme">
-            <p>About</p>
-          </a>
-          <a href="https://chrome.google.com/webstore/">
-            <p>Store</p>
-          </a>
+
+      <header className="flex text-sm text-gray-700 w-full">
+        <div className="flex space-x-4 items-center absolute top-4 right-4 justify-between w-[90%] md:w-auto">
+          <div className="flex space-x-4">
+            {" "}
+            <Link href="https://mail.google.com/mail/">
+              <p className="link">Gmail</p>
+            </Link>
+            <Link href="https://photos.google.com/">
+              <p className="link">Images</p>
+            </Link>
+          </div>
+          <div className="flex space-x-4">
+            <Link href="https://www.google.com.ng/intl/en-GB/about/products?tab=rh">
+              <svg
+                className="text-gray-300 h-8 w-8 p-1 rounded-full hover:bg-gray-100 cursor-pointer"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
+              </svg>
+            </Link>
+            <Avatar
+              url="https://lh3.googleusercontent.com/ogw/AAEL6sjHUuJEzokl1bNe-TzdoAymNKB--G2zWt4czTUP7Q"
+              href="https://accounts.google.com/SignOutOptions?hl=en-GB&continue=https://www.google.com%3Fhl%3Den-GB"
+            />
+          </div>
         </div>
-        {/* Right */}
-        <div className="flex space-x-4 items-center">
-          <a href="https://mail.google.com/mail/">
-            <p>Gmail</p>
-          </a>
-          <a href="https://photos.google.com/">
-            <p>Images</p>
-          </a>
-        </div>
-        {/* Icon */}
-        {/* Avatar */}
       </header>
-      {/* Body */}
+
       <main>
-        <h1 className="m-5 font-bold">Google!</h1>
+        <form className="flex flex-col items-center mt-40 md:mt-20 flex-grow">
+          <Image
+            width={272}
+            height={92}
+            alt="Google Homepage"
+            className="m-5"
+            src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+          />
+          <SearchTab />
+          <div className="flex p-5 space-x-2">
+            <button className="bg-[#F8F9FA] btn">Google Search</button>
+            <button className="bg-[#F8F9FA] btn">I&apos;m feeling Lucky</button>
+          </div>
+        </form>
       </main>
-      {/* Footer */}
-      <footer></footer>
+
+      <Footer />
     </>
   );
 }
