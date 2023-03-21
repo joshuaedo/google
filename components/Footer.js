@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-// import { GlobeIcon } from "@heroicons/react/solid";
 import { useState, useEffect } from "react";
 
 export default function Footer() {

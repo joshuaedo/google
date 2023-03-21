@@ -4,8 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import SearchTab from "@/components/SearchTab";
 import Footer from "@/components/Footer";
+import useDeviceSize from "@/lib/useDeviceSize";
 
 export default function Home() {
+  const [width] = useDeviceSize();
+  const isMobile = width <= 600;
+
   return (
     <>
       <Head>
@@ -46,13 +50,23 @@ export default function Home() {
 
       <main>
         <form className="flex flex-col items-center mt-40 md:mt-20 flex-grow">
-          <Image
-            width={272}
-            height={92}
-            alt="Google Homepage"
-            className="m-5"
-            src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
-          />
+          {isMobile ? (
+            <Image
+              width={160}
+              height={56}
+              alt="Google Homepage"
+              className="m-3"
+              src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png"
+            />
+          ) : (
+            <Image
+              width={272}
+              height={92}
+              alt="Google Homepage"
+              className="m-5"
+              src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+            />
+          )}
           <SearchTab />
           <div className="flex p-5 space-x-2">
             <button className="bg-[#F8F9FA] btn">Google Search</button>

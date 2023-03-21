@@ -3,7 +3,7 @@ import { SearchIcon } from "@heroicons/react/outline";
 export default function SearchTab() {
   return (
     <>
-      <div className="flex w-full hover:shadow-lg focus-within:shadow-lg rounded-full border border-gray-200 px-5 py-3 items-center max-w-sm md:max-w-lg">
+      <div className="flex w-full hover:shadow-lg focus-within:shadow-lg rounded-full border border-gray-200 px-3 md:px-5 py-1 md:py-3 items-center max-w-sm md:max-w-lg">
         <SearchIcon className="h-4 mr-3 text-gray-400" />
 
         <input type="text" className="focus:outline-none flex-grow" />
