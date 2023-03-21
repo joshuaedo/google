@@ -3,8 +3,8 @@ import { SearchIcon } from "@heroicons/react/outline";
 export default function SearchTab() {
   return (
     <>
-      <div className="flex w-full hover:shadow-lg focus-within:shadow-lg rounded-full border border-gray-200 md:px-5 py-2 md:py-3 items-center max-w-xs md:max-w-lg">
-        <SearchIcon className="h-4 mr-3 text-gray-400" />
+      <div className="flex w-full hover:shadow-lg focus-within:shadow-lg rounded-full border border-gray-200 px-3 md:px-5 py-2 md:py-3 items-center max-w-xs md:max-w-lg">
+        <SearchIcon className="h-4 text-gray-400" />
 
         <input type="text" className="focus:outline-none flex-grow" />
 
@@ -13,7 +13,7 @@ export default function SearchTab() {
           focusable="false"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 ml-3"
+          className="h-6 mr-3"
         >
           <path
             fill="#4285f4"
@@ -35,7 +35,7 @@ export default function SearchTab() {
           focusable="false"
           viewBox="0 0 192 192"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 ml-3"
+          className="h-6"
         >
           <rect fill="none" height="192" width="192"></rect>
           <g>
