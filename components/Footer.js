@@ -17,7 +17,6 @@ export default function Footer() {
     )
       .then((response) => response.json())
       .then((result) => {
-        console.log(result.country.name);
         setCountry(result.country.name);
       })
       .catch((error) => console.log("error", error));
@@ -63,10 +62,16 @@ export default function Footer() {
           </div>
 
           <div className="px-8 py-3 flex justify-center space-x-8 md:ml-auto">
-            <Link href="https://policies.google.com/privacy/" className="link">
+            <Link
+              href="https://policies.google.com/privacy?hl=en-US&fg=1"
+              className="link"
+            >
               <span>Privacy</span>
             </Link>
-            <Link href="https://policies.google.com/terms/" className="link">
+            <Link
+              href="https://policies.google.com/terms?hl=en-US&fg=1"
+              className="link"
+            >
               <span>Terms</span>
             </Link>
             <Link

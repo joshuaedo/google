@@ -41,7 +41,8 @@ export default function Home() {
               </svg>
             </Link>
             <Avatar
-              url="https://lh3.googleusercontent.com/ogw/AAEL6sjHUuJEzokl1bNe-TzdoAymNKB--G2zWt4czTUP7Q"
+              url="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/340px-Default_pfp.svg.png?20220226140232"
+              // url="https://lh3.googleusercontent.com/ogw/AAEL6sjHUuJEzokl1bNe-TzdoAymNKB--G2zWt4czTUP7Q"
               href="https://accounts.google.com/SignOutOptions?hl=en-GB&continue=https://www.google.com%3Fhl%3Den-GB"
             />
           </div>
@@ -68,10 +69,6 @@ export default function Home() {
             />
           )}
           <SearchTab />
-          <div className="flex p-5 space-x-2">
-            <button className="bg-[#F8F9FA] btn">Google Search</button>
-            <button className="bg-[#F8F9FA] btn">I&apos;m feeling Lucky</button>
-          </div>
         </form>
       </main>
 

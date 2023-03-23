@@ -1,12 +1,28 @@
 import { SearchIcon } from "@heroicons/react/outline";
+import { useRef } from "react";
+import { useRouter } from "next/navigation";
 
 export default function SearchTab() {
+  const searchInputRef = useRef();
+  const router = useRouter();
+
+  const search = (e) => {
+    e.preventDefault();
+    const term = searchInputRef.current.value;
+    if (!term) return;
+    router.push(`/search?term=${term}`);
+  };
+
   return (
     <>
       <div className="flex w-full hover:shadow-lg focus-within:shadow-lg rounded-full border border-gray-200 px-3 md:px-5 py-2 md:py-3 items-center max-w-xs md:max-w-lg">
         <SearchIcon className="h-4 text-gray-400" />
 
-        <input type="text" className="focus:outline-none flex-grow mx-1" />
+        <input
+          ref={searchInputRef}
+          type="text"
+          className="focus:outline-none flex-grow mx-1"
+        />
 
         {/* Microphone */}
         <svg
@@ -58,6 +74,16 @@ export default function SearchTab() {
             ></path>
           </g>
         </svg>
+      </div>
+
+      {/* Buttons */}
+      <div className="flex p-5 space-x-2">
+        <button className="bg-[#F8F9FA] btn" onClick={search}>
+          Google Search
+        </button>
+        <button className="bg-[#F8F9FA] btn" onClick={search}>
+          I&apos;m feeling Lucky
+        </button>
       </div>
     </>
   );
