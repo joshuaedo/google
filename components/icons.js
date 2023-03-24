@@ -98,11 +98,99 @@ function SearchButtons(props) {
   );
 }
 
-// function (){
-//     return(
-//         <>
-//         </>
-//     )
-// }
+function MapIcon() {
+  return (
+    <>
+      <span className="w-[13px] h-[13px] opacity-50">
+        <svg focusable="false" viewBox="0 0 16 16">
+          <path d="M7.503 0c3.09 0 5.502 2.487 5.502 5.427 0 2.337-1.13 3.694-2.26 5.05-.454.528-.906 1.13-1.358 1.734-.452.603-.754 1.508-.98 1.96-.226.452-.377.829-.904.829-.528 0-.678-.377-.905-.83-.226-.451-.527-1.356-.98-1.959-.452-.603-.904-1.206-1.356-1.734C3.132 9.121 2 7.764 2 5.427 2 2.487 4.412 0 7.503 0zm0 1.364c-2.283 0-4.14 1.822-4.14 4.063 0 1.843.86 2.873 1.946 4.177.468.547.942 1.178 1.4 1.79.34.452.596.99.794 1.444.198-.455.453-.992.793-1.445.459-.61.931-1.242 1.413-1.803 1.074-1.29 1.933-2.32 1.933-4.163 0-2.24-1.858-4.063-4.139-4.063zm0 2.734a1.33 1.33 0 11-.001 2.658 1.33 1.33 0 010-2.658"></path>
+        </svg>
+      </span>
+    </>
+  );
+}
 
-export { CarbonNeutral, MicrophoneIcon, CameraIcon, SearchButtons };
+function BooksIcon() {
+  return (
+    <>
+      <span className="w-[13px] h-[13px] opacity-50">
+        <svg focusable="false" viewBox="0 0 24 24">
+          <path d="M18 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm0 18H6V4h2v8l2.5-1.5L13 12V4h5v16"></path>
+        </svg>
+      </span>
+    </>
+  );
+}
+function FinanceIcon() {
+  return (
+    <>
+      <span className="w-[13px] h-[13px] opacity-50">
+        <svg
+          focusable="false"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none"></path>
+          <path
+            clip-rule="evenodd"
+            d="M6 15.5l-3 2.94V10h3v5.5zm5-1.84l-1.57-1.34L8 13.64V6h3v7.66zM16 12l-3 3V2h3v10zm2.81-.19L17 10h5v5l-1.79-1.79L13 20.36l-3.47-3.02L5.75 21H3l6.47-6.34L13 17.64l5.81-5.83z"
+            fill-rule="evenodd"
+          ></path>
+        </svg>
+      </span>
+    </>
+  );
+}
+function ColoredSearchIcon() {
+  return (
+    <>
+      <span className="w-[13px] h-[13px]">
+        <svg focusable="false" viewBox="0 0 24 24">
+          <path fill="#34a853" d="M10 2v2a6 6 0 0 1 6 6h2a8 8 0 0 0-8-8"></path>
+          <path
+            fill="#ea4335"
+            d="M10 4V2a8 8 0 0 0-8 8h2c0-3.3 2.7-6 6-6"
+          ></path>
+          <path
+            fill="#fbbc04"
+            d="M4 10H2a8 8 0 0 0 8 8v-2c-3.3 0-6-2.69-6-6"
+          ></path>
+          <path
+            fill="#4285f4"
+            d="M22 20.59l-5.69-5.69A7.96 7.96 0 0 0 18 10h-2a6 6 0 0 1-6 6v2c1.85 0 3.52-.64 4.88-1.68l5.69 5.69L22 20.59"
+          ></path>
+        </svg>
+      </span>
+    </>
+  );
+}
+function FlightsIcon() {
+  return (
+    <>
+      <span className="w-[13px] h-[13px] opacity-50">
+        <svg
+          focusable="false"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none"></path>
+          <path d="M12.98 12.89l-4.03 4.03.42 2.95L8.24 21l-1.87-3.37L3 15.76l1.12-1.12 2.95.42 4.03-4.03L3 6.77l1.5-1.5 10.04 2.32 4.2-4.2a1.32 1.32 0 0 1 1.87 0c.52.52.52 1.36 0 1.87l-4.2 4.2 2.32 10.04-1.5 1.5-4.25-8.11z"></path>
+        </svg>
+      </span>
+    </>
+  );
+}
+
+export {
+  CarbonNeutral,
+  MicrophoneIcon,
+  CameraIcon,
+  SearchButtons,
+  MapIcon,
+  BooksIcon,
+  FinanceIcon,
+  FlightsIcon,
+  ColoredSearchIcon,
+};
