@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { CarbonNeutral } from "@/components/icons";
 
-export default function Footer() {
+export default function Footer({ absolute }) {
   // Get User's Country
   const apiKey = process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY;
   const [country, setCountry] = useState(null);
@@ -23,7 +24,7 @@ export default function Footer() {
   }, [apiKey]);
 
   return (
-    <footer className="absolute inset-x-0 bottom-0">
+    <footer className={`${absolute && "fixed inset-x-0 bottom-0"}`}>
       <div className="grid w-full divide-y-[1px] divide-gray-300 bg-gray-100 text-sm text-gray-500">
         <div className="px-8 py-3">{country && <p>{country}</p>}</div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row-dense">
@@ -32,13 +33,7 @@ export default function Footer() {
               href="https://sustainability.google/carbon-free/"
               className="link flex"
             >
-              <Image
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC"
-                className="w-5 h-5 p-1"
-                width={64}
-                height={64}
-                alt="Carbon Neutral"
-              />
+              <CarbonNeutral />
               <span>Carbon Neutral since 2007</span>
             </Link>
           </div>
