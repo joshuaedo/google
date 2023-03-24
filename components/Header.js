@@ -30,7 +30,7 @@ export default function Header() {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    router.push(`/search?term=${term}`);
+    term && router.push(`/search?term=${term}`);
   };
 
   return (
@@ -74,7 +74,7 @@ export default function Header() {
       </div>
 
       {/*   HeaderOptions */}
-      <div className="flex w-full pl-5 md:pl-44 pb-1 text-gray-600 text-sm justify-start border-b-[1px] overflow-x-scroll scrollbar-hide">
+      <div className="flex w-full px-5 md:pl-44 pb-1 text-gray-600 text-sm justify-start border-b-[1px] overflow-x-scroll scrollbar-hide">
         <div className="flex space-x-3">
           <HeaderOption Icon={ColoredSearchIcon} title="All" selected />
           <HeaderOption

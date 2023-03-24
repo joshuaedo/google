@@ -1,8 +1,13 @@
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Response from "@/lib/Response";
 
-export default function Search() {
+const apiKey = process.env.GOOGLE_API_KEY;
+const contextKey = process.env.CONTEXT_ID;
+
+export default function Search({ results }) {
+  console.log(results);
   return (
     <>
       <Head>
@@ -48,4 +53,21 @@ export default function Search() {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps(context) {
+  const useDummyData = true;
+
+  const data = useDummyData
+    ? Response
+    : await fetch(
+        `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${contextKey}&q=${context.query.term}`
+      ).then((res) => res.json());
+
+  // Send Results to client after server has rendered
+  return {
+    props: {
+      results: data,
+    },
+  };
 }
