@@ -57,11 +57,12 @@ export default function Search({ results }) {
 
 export async function getServerSideProps(context) {
   const useDummyData = true;
+  const startIndex = context.query.start || "0";
 
   const data = useDummyData
     ? Response
     : await fetch(
-        `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${contextKey}&q=${context.query.term}`
+        `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${contextKey}&q=${context.query.term}&start=${startIndex}`
       ).then((res) => res.json());
 
   // Send Results to client after server has rendered

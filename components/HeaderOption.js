@@ -4,7 +4,6 @@ export default function HeaderOption({
   Icon,
   title,
   selected,
-  onClick,
   pushTitle,
   term,
 }) {
