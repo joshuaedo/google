@@ -7,7 +7,7 @@ const apiKey = process.env.GOOGLE_API_KEY;
 const contextKey = process.env.CONTEXT_ID;
 
 export default function Search({ results }) {
-  console.log(results);
+  // console.log(results);
   return (
     <>
       <SearchHeader />
