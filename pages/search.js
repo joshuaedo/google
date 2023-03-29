@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import SearchHeader from "@/components/SearchHeader";
 import Footer from "@/components/Footer";
 import SearchResults from "@/components/SearchResults";
 import Response from "@/lib/Response";
@@ -10,7 +10,7 @@ export default function Search({ results }) {
   console.log(results);
   return (
     <>
-      <Header />
+      <SearchHeader />
       <SearchResults />
       <Footer />
     </>

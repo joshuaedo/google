@@ -18,7 +18,7 @@ import {
 } from "@/components/icons";
 import HeaderOption from "@/components/HeaderOption";
 
-export default function Header() {
+export default function SearchHeader() {
   const [width] = useDeviceSize();
   const isMD = width >= 600;
   const router = useRouter();
