@@ -5,22 +5,26 @@ export default function SearchResults({ results }) {
   return (
     <>
       <div className="min-h-screen mx-auto w-full px-4 sm:pl-[5%] md:pl-[14%] lg:pl-52">
-        <p className="text-gray-500 text-sm mb-5 mt-3">
+        <p className="text-gray-500 text-xs md:text-sm mt-2 hidden md:block">
           About {results.searchInformation?.formattedTotalResults} results (
           {results.searchInformation?.formattedSearchTime} seconds){" "}
         </p>
 
         {results.items?.map((result) => (
-          <div key={result.link} className="max-w-xl mb-8">
+          <div
+            key={result.link}
+            className="max-w-xl py-5 border-b-4 md:border-b-0 border-gray-300"
+          >
             <div className="group">
               <div className="flex">
-                <div className="w-7 h-7 my-2 mr-3 rounded-full bg-[#F1F3F4]">
-                  <img
-                    src={result.pagemap?.cse_image?.[0].src}
-                    className="w-[60%] h-[60%] p-0 mt-1 mx-auto object-contain"
-                  />
-                </div>
-
+                {result.pagemap?.cse_image && (
+                  <div className="w-7 h-7 my-2 mr-3 rounded-full bg-[#F1F3F4]">
+                    <img
+                      src={result.pagemap?.cse_image?.[0].src}
+                      className="w-[75%] h-[75%] p-0 mt-[11%] mx-auto object-contain"
+                    />
+                  </div>
+                )}
                 <div className="max-w-[50%] my-auto">
                   <p></p>
                   <Link

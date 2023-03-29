@@ -30,7 +30,7 @@ export default function SearchHeader() {
   const search = (e) => {
     e.preventDefault();
     setSearchResults(searchInputRef.current.value);
-    router.push(`/search?searchResult=${searchResult}`);
+    router.push(`/search?term=${searchResult}`);
   };
 
   const changeResult = () => {

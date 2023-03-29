@@ -13,7 +13,7 @@ export default function SearchTab() {
   const search = (e) => {
     e.preventDefault();
     setSearchResults(searchInputRef.current.value);
-    searchResult && router.push(`/search?searchResult=${searchResult}`);
+    searchResult && router.push(`/search?term=${searchResult}`);
   };
 
   const changeResult = () => {
