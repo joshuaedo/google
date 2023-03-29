@@ -4,7 +4,7 @@ import PaginationButtons from "@/components/PaginationButtons";
 export default function SearchResults({ results }) {
   return (
     <>
-      <div className="min-h-screen mx-auto w-full px-3 sm:pl-[5%] md:pl-[14%] lg:pl-52">
+      <div className="min-h-screen mx-auto w-full px-4 sm:pl-[5%] md:pl-[14%] lg:pl-52">
         <p className="text-gray-500 text-sm mb-5 mt-3">
           About {results.searchInformation?.formattedTotalResults} results (
           {results.searchInformation?.formattedSearchTime} seconds){" "}
@@ -33,12 +33,14 @@ export default function SearchResults({ results }) {
               </div>
 
               <Link href={result.link} className="">
-                <h2 className="truncate text-xl text-blue-800 font-medium group-hover:underline">
+                <h2 className="truncate text-lg md:text-xl text-blue-800 font-medium group-hover:underline">
                   {result.title}
                 </h2>
               </Link>
             </div>
-            <p className="line-clamp-2 text-gray-600">{result.snippet}</p>
+            <p className="line-clamp-2 text-gray-600 text-sm md:text-md">
+              {result.snippet}
+            </p>
           </div>
         ))}
 
