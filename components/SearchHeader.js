@@ -17,29 +17,30 @@ import {
   CameraIcon,
 } from "@/components/icons";
 import HeaderOption from "@/components/HeaderOption";
+import { useRecoilState } from "recoil";
+import { searchResultState } from "@/atoms/searchAtom";
 
 export default function SearchHeader() {
   const [width] = useDeviceSize();
   const isMD = width >= 600;
   const router = useRouter();
   const searchInputRef = useRef(null);
-  const [term, setTerm] = useState(null);
-  const [PageHeader, setPageHeader] = useState(null);
+  const [searchResult, setSearchResults] = useRecoilState(searchResultState);
 
-  const handleSearchChange = (e) => {
-    setTerm(e.target.value);
+  const search = (e) => {
+    e.preventDefault();
+    setSearchResults(searchInputRef.current.value);
+    router.push(`/search?searchResult=${searchResult}`);
   };
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    setPageHeader(term);
-    term && router.push(`/search?term=${term}`);
+  const changeResult = () => {
+    setSearchResults(searchInputRef.current.value);
   };
 
   return (
     <>
       <Head>
-        <title>{PageHeader && `${PageHeader} - `} Google Search</title>
+        <title>{searchResult && `${searchResult} - `} Google Search</title>
         <meta name="description" content="Search Results" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -59,14 +60,14 @@ export default function SearchHeader() {
           />
           <form
             className="flex flex-grow border px-3 md:px-5 py-2 md:py-3 ml-0 md:ml-10 mr-0 md:mr-5  mt-4 md:mt-0 border-gray-100 rounded-full shadow-lg max-w-3xl items-center"
-            onSubmit={handleSearchSubmit}
+            onSubmit={search}
           >
             <SearchIcon className="h-6 text-gray-400" />
             <input
               ref={searchInputRef}
               type="text"
-              onChange={handleSearchChange}
               className="flex-grow w-full focus:outline-none px-3"
+              onChange={changeResult}
             />
             <XIcon
               className="h-6 pr-3 sm:mr-3 text-gray-500 cursor-pointer hover:opacity-70 border-r-0 md:border-r-2 border-gray-200"
@@ -91,43 +92,43 @@ export default function SearchHeader() {
               Icon={ImageIcon}
               title="Images"
               pushTitle="images"
-              term={term}
+              searchResult={searchResult}
             />
             <HeaderOption
               Icon={VideosIcon}
               title="Videos"
               pushTitle="videohp"
-              term={term}
+              searchResult={searchResult}
             />
             <HeaderOption
               Icon={NewsIcon}
               title="News"
               pushTitle="news"
-              term={term}
+              searchResult={searchResult}
             />
             <HeaderOption
               Icon={MapIcon}
               title="Maps"
               pushTitle="maps"
-              term={term}
+              searchResult={searchResult}
             />
             <HeaderOption
               Icon={BooksIcon}
               title="Books"
               pushTitle="books"
-              term={term}
+              searchResult={searchResult}
             />
             <HeaderOption
               Icon={FlightsIcon}
               title="Flights"
               pushTitle="flights"
-              term={term}
+              searchResult={searchResult}
             />
             <HeaderOption
               Icon={FinanceIcon}
               title="Finance"
               pushTitle="finance"
-              term={term}
+              searchResult={searchResult}
             />
           </div>
         </div>

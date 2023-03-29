@@ -11,7 +11,7 @@ export default function Search({ results }) {
   return (
     <>
       <SearchHeader />
-      <SearchResults />
+      <SearchResults results={results} />
       <Footer />
     </>
   );

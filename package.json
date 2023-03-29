@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "recoil": "^0.7.7",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {

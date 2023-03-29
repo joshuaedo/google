@@ -2,16 +2,22 @@ import { SearchIcon } from "@heroicons/react/outline";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
 import { MicrophoneIcon, CameraIcon, SearchButtons } from "@/components/icons";
+import { useRecoilState } from "recoil";
+import { searchResultState } from "@/atoms/searchAtom";
 
 export default function SearchTab() {
+  const [searchResult, setSearchResults] = useRecoilState(searchResultState);
   const searchInputRef = useRef();
   const router = useRouter(null);
 
   const search = (e) => {
     e.preventDefault();
-    const term = searchInputRef.current.value;
-    if (!term) return;
-    router.push(`/search?term=${term}`);
+    setSearchResults(searchInputRef.current.value);
+    searchResult && router.push(`/search?searchResult=${searchResult}`);
+  };
+
+  const changeResult = () => {
+    setSearchResults(searchInputRef.current.value);
   };
 
   return (
@@ -22,6 +28,7 @@ export default function SearchTab() {
           ref={searchInputRef}
           type="text"
           className="focus:outline-none flex-grow mx-1"
+          onChange={changeResult}
         />
         <MicrophoneIcon />
         <CameraIcon />

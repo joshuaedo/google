@@ -5,7 +5,7 @@ export default function HeaderOption({
   title,
   selected,
   pushTitle,
-  term,
+  searchResult,
 }) {
   const router = useRouter();
   return (
@@ -15,7 +15,7 @@ export default function HeaderOption({
           selected && "text-blue-500 border-blue-500"
         }`}
         onClick={() => {
-          router.push(`https://www.google.com/${pushTitle}?q=${term}`);
+          router.push(`https://www.google.com/${pushTitle}?q=${searchResult}`);
         }}
       >
         <Icon className="h-4 hidden md:inline" />
