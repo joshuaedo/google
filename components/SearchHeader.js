@@ -40,7 +40,7 @@ export default function SearchHeader() {
   return (
     <>
       <Head>
-        <title>{searchResult && `${searchResult} - `} Google Search</title>
+        <title>{searchResult && `${searchResult} - `} Search</title>
         <meta name="description" content="Search Results" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
