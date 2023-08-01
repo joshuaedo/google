@@ -42,8 +42,17 @@ export default function SearchHeader() {
       <Head>
         <title>{searchResult && `${searchResult} - `} Search</title>
         <meta name="description" content="Search Results" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:title"
+          content={searchResult && `${searchResult} - `}
+          Search
+        />
+        <meta
+          name="twitter:title"
+          content={searchResult && `${searchResult} - `}
+          Search
+        />
+        <meta name="twitter:card" content="summary" />
       </Head>
       <header className="sticky top-0 bg-white">
         <div className="block md:flex w-full p-6 items-center">

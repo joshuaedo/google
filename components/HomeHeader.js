@@ -8,8 +8,9 @@ export default function HomeHeader() {
       <Head>
         <title>Search</title>
         <meta name="description" content="Joshua Edo's Search Engine" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Joshua Edo • Search" />
+        <meta name="twitter:title" content="Joshua Edo • Search" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       <header className="flex text-sm text-gray-700 w-full">
